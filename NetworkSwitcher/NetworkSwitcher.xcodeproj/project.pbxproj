@@ -1,0 +1,404 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5907180F159881C900EF2E1C /* CustomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5907180E159881C900EF2E1C /* CustomTableViewCell.m */; };
+		594AFF6915EFA69B009EDB49 /* Ethernet.png in Resources */ = {isa = PBXBuildFile; fileRef = 594AFF6515EFA69B009EDB49 /* Ethernet.png */; };
+		594AFF6A15EFA69B009EDB49 /* Ethernet@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 594AFF6615EFA69B009EDB49 /* Ethernet@2x.png */; };
+		594AFF6B15EFA69B009EDB49 /* Wireless.png in Resources */ = {isa = PBXBuildFile; fileRef = 594AFF6715EFA69B009EDB49 /* Wireless.png */; };
+		594AFF6C15EFA69B009EDB49 /* Wireless@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 594AFF6815EFA69B009EDB49 /* Wireless@2x.png */; };
+		595C416A1594F3840000D1A7 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 595C41691594F3840000D1A7 /* AddressBook.framework */; };
+		59618D7015909E6200E6F796 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59618D6F15909E6200E6F796 /* Cocoa.framework */; };
+		59618D7C15909E6200E6F796 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 59618D7B15909E6200E6F796 /* main.m */; };
+		59618D8315909E6200E6F796 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 59618D8215909E6200E6F796 /* AppDelegate.m */; };
+		59618D8615909E6200E6F796 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59618D8415909E6200E6F796 /* MainMenu.xib */; };
+		59618D9415909FA000E6F796 /* StatusItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 59618D9315909FA000E6F796 /* StatusItemView.m */; };
+		59618DA51590A8A500E6F796 /* Status.png in Resources */ = {isa = PBXBuildFile; fileRef = 59618DA11590A8A500E6F796 /* Status.png */; };
+		59618DA61590A8A500E6F796 /* StatusHighlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = 59618DA21590A8A500E6F796 /* StatusHighlighted.png */; };
+		59618DAC1590B95000E6F796 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59618DAB1590B95000E6F796 /* SystemConfiguration.framework */; };
+		59618DBF1590DC7D00E6F796 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59618DBE1590DC7C00E6F796 /* Security.framework */; };
+		59618DE8159218A500E6F796 /* NetworkInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = 59618DE7159218A500E6F796 /* NetworkInterface.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		5907180D159881C900EF2E1C /* CustomTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTableViewCell.h; sourceTree = "<group>"; };
+		5907180E159881C900EF2E1C /* CustomTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTableViewCell.m; sourceTree = "<group>"; };
+		594AFF6515EFA69B009EDB49 /* Ethernet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Ethernet.png; sourceTree = "<group>"; };
+		594AFF6615EFA69B009EDB49 /* Ethernet@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Ethernet@2x.png"; sourceTree = "<group>"; };
+		594AFF6715EFA69B009EDB49 /* Wireless.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Wireless.png; sourceTree = "<group>"; };
+		594AFF6815EFA69B009EDB49 /* Wireless@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Wireless@2x.png"; sourceTree = "<group>"; };
+		595C41691594F3840000D1A7 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		59618D6B15909E6200E6F796 /* NetworkSwitcher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NetworkSwitcher.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		59618D6F15909E6200E6F796 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		59618D7215909E6200E6F796 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		59618D7315909E6200E6F796 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		59618D7415909E6200E6F796 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		59618D7715909E6200E6F796 /* NetworkSwitcher-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "NetworkSwitcher-Info.plist"; sourceTree = "<group>"; };
+		59618D7915909E6200E6F796 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		59618D7B15909E6200E6F796 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		59618D7D15909E6200E6F796 /* NetworkSwitcher-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NetworkSwitcher-Prefix.pch"; sourceTree = "<group>"; };
+		59618D7F15909E6200E6F796 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		59618D8115909E6200E6F796 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		59618D8215909E6200E6F796 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		59618D8515909E6200E6F796 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		59618D9215909FA000E6F796 /* StatusItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatusItemView.h; sourceTree = "<group>"; };
+		59618D9315909FA000E6F796 /* StatusItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatusItemView.m; sourceTree = "<group>"; };
+		59618DA11590A8A500E6F796 /* Status.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Status.png; sourceTree = "<group>"; };
+		59618DA21590A8A500E6F796 /* StatusHighlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = StatusHighlighted.png; sourceTree = "<group>"; };
+		59618DAB1590B95000E6F796 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		59618DBE1590DC7C00E6F796 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		59618DE6159218A500E6F796 /* NetworkInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkInterface.h; sourceTree = "<group>"; };
+		59618DE7159218A500E6F796 /* NetworkInterface.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkInterface.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		59618D6815909E6200E6F796 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				595C416A1594F3840000D1A7 /* AddressBook.framework in Frameworks */,
+				59618DBF1590DC7D00E6F796 /* Security.framework in Frameworks */,
+				59618DAC1590B95000E6F796 /* SystemConfiguration.framework in Frameworks */,
+				59618D7015909E6200E6F796 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		59618D6015909E6200E6F796 = {
+			isa = PBXGroup;
+			children = (
+				595C41691594F3840000D1A7 /* AddressBook.framework */,
+				59618D7515909E6200E6F796 /* NetworkSwitcher */,
+				59618D6E15909E6200E6F796 /* Frameworks */,
+				59618D6C15909E6200E6F796 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		59618D6C15909E6200E6F796 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				59618D6B15909E6200E6F796 /* NetworkSwitcher.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		59618D6E15909E6200E6F796 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				59618DBE1590DC7C00E6F796 /* Security.framework */,
+				59618DAB1590B95000E6F796 /* SystemConfiguration.framework */,
+				59618D6F15909E6200E6F796 /* Cocoa.framework */,
+				59618D7115909E6200E6F796 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		59618D7115909E6200E6F796 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				59618D7215909E6200E6F796 /* AppKit.framework */,
+				59618D7315909E6200E6F796 /* CoreData.framework */,
+				59618D7415909E6200E6F796 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		59618D7515909E6200E6F796 /* NetworkSwitcher */ = {
+			isa = PBXGroup;
+			children = (
+				59618D9F1590A8A500E6F796 /* Resources */,
+				59618D8C15909EF100E6F796 /* Sources */,
+				59618D8115909E6200E6F796 /* AppDelegate.h */,
+				59618D8215909E6200E6F796 /* AppDelegate.m */,
+				59618D7615909E6200E6F796 /* Supporting Files */,
+			);
+			path = NetworkSwitcher;
+			sourceTree = "<group>";
+		};
+		59618D7615909E6200E6F796 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				59618D7715909E6200E6F796 /* NetworkSwitcher-Info.plist */,
+				59618D7815909E6200E6F796 /* InfoPlist.strings */,
+				59618D7B15909E6200E6F796 /* main.m */,
+				59618D7D15909E6200E6F796 /* NetworkSwitcher-Prefix.pch */,
+				59618D7E15909E6200E6F796 /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		59618D8C15909EF100E6F796 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				59618DE51592189100E6F796 /* Models */,
+				59618D9115909F8800E6F796 /* Views */,
+				59618D8D15909EF700E6F796 /* Controllers */,
+			);
+			name = Sources;
+			sourceTree = "<group>";
+		};
+		59618D8D15909EF700E6F796 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		59618D9115909F8800E6F796 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				59618D9215909FA000E6F796 /* StatusItemView.h */,
+				59618D9315909FA000E6F796 /* StatusItemView.m */,
+				5907180D159881C900EF2E1C /* CustomTableViewCell.h */,
+				5907180E159881C900EF2E1C /* CustomTableViewCell.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		59618D9F1590A8A500E6F796 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				59618DA01590A8A500E6F796 /* Images */,
+				59618DA31590A8A500E6F796 /* UserInterfaces */,
+			);
+			path = Resources;
+			sourceTree = SOURCE_ROOT;
+		};
+		59618DA01590A8A500E6F796 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				594AFF6515EFA69B009EDB49 /* Ethernet.png */,
+				594AFF6615EFA69B009EDB49 /* Ethernet@2x.png */,
+				594AFF6715EFA69B009EDB49 /* Wireless.png */,
+				594AFF6815EFA69B009EDB49 /* Wireless@2x.png */,
+				59618DA11590A8A500E6F796 /* Status.png */,
+				59618DA21590A8A500E6F796 /* StatusHighlighted.png */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		59618DA31590A8A500E6F796 /* UserInterfaces */ = {
+			isa = PBXGroup;
+			children = (
+				59618D8415909E6200E6F796 /* MainMenu.xib */,
+			);
+			path = UserInterfaces;
+			sourceTree = "<group>";
+		};
+		59618DE51592189100E6F796 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				59618DE6159218A500E6F796 /* NetworkInterface.h */,
+				59618DE7159218A500E6F796 /* NetworkInterface.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		59618D6A15909E6200E6F796 /* NetworkSwitcher */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 59618D8915909E6200E6F796 /* Build configuration list for PBXNativeTarget "NetworkSwitcher" */;
+			buildPhases = (
+				59618D6715909E6200E6F796 /* Sources */,
+				59618D6815909E6200E6F796 /* Frameworks */,
+				59618D6915909E6200E6F796 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NetworkSwitcher;
+			productName = NetworkSwitcher;
+			productReference = 59618D6B15909E6200E6F796 /* NetworkSwitcher.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		59618D6215909E6200E6F796 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0430;
+				ORGANIZATIONNAME = simplegCorp;
+			};
+			buildConfigurationList = 59618D6515909E6200E6F796 /* Build configuration list for PBXProject "NetworkSwitcher" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 59618D6015909E6200E6F796;
+			productRefGroup = 59618D6C15909E6200E6F796 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				59618D6A15909E6200E6F796 /* NetworkSwitcher */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		59618D6915909E6200E6F796 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				59618D8615909E6200E6F796 /* MainMenu.xib in Resources */,
+				59618DA51590A8A500E6F796 /* Status.png in Resources */,
+				59618DA61590A8A500E6F796 /* StatusHighlighted.png in Resources */,
+				594AFF6915EFA69B009EDB49 /* Ethernet.png in Resources */,
+				594AFF6A15EFA69B009EDB49 /* Ethernet@2x.png in Resources */,
+				594AFF6B15EFA69B009EDB49 /* Wireless.png in Resources */,
+				594AFF6C15EFA69B009EDB49 /* Wireless@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		59618D6715909E6200E6F796 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				59618D7C15909E6200E6F796 /* main.m in Sources */,
+				59618D8315909E6200E6F796 /* AppDelegate.m in Sources */,
+				59618D9415909FA000E6F796 /* StatusItemView.m in Sources */,
+				59618DE8159218A500E6F796 /* NetworkInterface.m in Sources */,
+				5907180F159881C900EF2E1C /* CustomTableViewCell.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		59618D7815909E6200E6F796 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				59618D7915909E6200E6F796 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		59618D7E15909E6200E6F796 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				59618D7F15909E6200E6F796 /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		59618D8415909E6200E6F796 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				59618D8515909E6200E6F796 /* en */,
+			);
+			name = MainMenu.xib;
+			path = ../../NetworkSwitcher;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		59618D8715909E6200E6F796 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		59618D8815909E6200E6F796 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		59618D8A15909E6200E6F796 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "NetworkSwitcher/NetworkSwitcher-Prefix.pch";
+				INFOPLIST_FILE = "NetworkSwitcher/NetworkSwitcher-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		59618D8B15909E6200E6F796 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "NetworkSwitcher/NetworkSwitcher-Prefix.pch";
+				INFOPLIST_FILE = "NetworkSwitcher/NetworkSwitcher-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		59618D6515909E6200E6F796 /* Build configuration list for PBXProject "NetworkSwitcher" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				59618D8715909E6200E6F796 /* Debug */,
+				59618D8815909E6200E6F796 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		59618D8915909E6200E6F796 /* Build configuration list for PBXNativeTarget "NetworkSwitcher" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				59618D8A15909E6200E6F796 /* Debug */,
+				59618D8B15909E6200E6F796 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 59618D6215909E6200E6F796 /* Project object */;
+}
