@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		029F294315F5518A0055C990 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 029F294115F5518A0055C990 /* MainMenu.xib */; };
 		5907180F159881C900EF2E1C /* CustomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5907180E159881C900EF2E1C /* CustomTableViewCell.m */; };
 		594AFF6915EFA69B009EDB49 /* Ethernet.png in Resources */ = {isa = PBXBuildFile; fileRef = 594AFF6515EFA69B009EDB49 /* Ethernet.png */; };
 		594AFF6A15EFA69B009EDB49 /* Ethernet@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 594AFF6615EFA69B009EDB49 /* Ethernet@2x.png */; };
@@ -16,7 +17,6 @@
 		59618D7015909E6200E6F796 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59618D6F15909E6200E6F796 /* Cocoa.framework */; };
 		59618D7C15909E6200E6F796 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 59618D7B15909E6200E6F796 /* main.m */; };
 		59618D8315909E6200E6F796 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 59618D8215909E6200E6F796 /* AppDelegate.m */; };
-		59618D8615909E6200E6F796 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59618D8415909E6200E6F796 /* MainMenu.xib */; };
 		59618D9415909FA000E6F796 /* StatusItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 59618D9315909FA000E6F796 /* StatusItemView.m */; };
 		59618DA51590A8A500E6F796 /* Status.png in Resources */ = {isa = PBXBuildFile; fileRef = 59618DA11590A8A500E6F796 /* Status.png */; };
 		59618DA61590A8A500E6F796 /* StatusHighlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = 59618DA21590A8A500E6F796 /* StatusHighlighted.png */; };
@@ -26,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		029F294215F5518A0055C990 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = NetworkSwitcher/en.lproj/MainMenu.xib; sourceTree = SOURCE_ROOT; };
 		5907180D159881C900EF2E1C /* CustomTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTableViewCell.h; sourceTree = "<group>"; };
 		5907180E159881C900EF2E1C /* CustomTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTableViewCell.m; sourceTree = "<group>"; };
 		594AFF6515EFA69B009EDB49 /* Ethernet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Ethernet.png; sourceTree = "<group>"; };
@@ -45,7 +46,6 @@
 		59618D7F15909E6200E6F796 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
 		59618D8115909E6200E6F796 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		59618D8215909E6200E6F796 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		59618D8515909E6200E6F796 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		59618D9215909FA000E6F796 /* StatusItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatusItemView.h; sourceTree = "<group>"; };
 		59618D9315909FA000E6F796 /* StatusItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatusItemView.m; sourceTree = "<group>"; };
 		59618DA11590A8A500E6F796 /* Status.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Status.png; sourceTree = "<group>"; };
@@ -187,7 +187,7 @@
 		59618DA31590A8A500E6F796 /* UserInterfaces */ = {
 			isa = PBXGroup;
 			children = (
-				59618D8415909E6200E6F796 /* MainMenu.xib */,
+				029F294115F5518A0055C990 /* MainMenu.xib */,
 			);
 			path = UserInterfaces;
 			sourceTree = "<group>";
@@ -252,13 +252,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				59618D8615909E6200E6F796 /* MainMenu.xib in Resources */,
 				59618DA51590A8A500E6F796 /* Status.png in Resources */,
 				59618DA61590A8A500E6F796 /* StatusHighlighted.png in Resources */,
 				594AFF6915EFA69B009EDB49 /* Ethernet.png in Resources */,
 				594AFF6A15EFA69B009EDB49 /* Ethernet@2x.png in Resources */,
 				594AFF6B15EFA69B009EDB49 /* Wireless.png in Resources */,
 				594AFF6C15EFA69B009EDB49 /* Wireless@2x.png in Resources */,
+				029F294315F5518A0055C990 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,6 +280,14 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		029F294115F5518A0055C990 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				029F294215F5518A0055C990 /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
 		59618D7815909E6200E6F796 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -294,15 +302,6 @@
 				59618D7F15909E6200E6F796 /* en */,
 			);
 			name = Credits.rtf;
-			sourceTree = "<group>";
-		};
-		59618D8415909E6200E6F796 /* MainMenu.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				59618D8515909E6200E6F796 /* en */,
-			);
-			name = MainMenu.xib;
-			path = ../../NetworkSwitcher;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
