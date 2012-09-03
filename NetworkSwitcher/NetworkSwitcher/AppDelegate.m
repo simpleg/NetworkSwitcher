@@ -15,6 +15,8 @@
 -(CFStringRef) getPrimaryAddress;
 -(NSArray *) getAllInterfaces;
 -(void) displayMenu;
+-(NSArray *) getSortedInterfaceByPrimaryService:(NSString *)primaryService forInterface:(NSArray *)interfaces;
+-(void) setMenuItemsWithArray:(NSArray *) content;
 @end
 
 @implementation AppDelegate
@@ -32,11 +34,6 @@
     
     [statusItemView setImage:[NSImage imageNamed:@"Status.png"]];
     [statusItemView setAlternateImage:[NSImage imageNamed:@"StatusHighlighted.png"]];
-    
-    primaryInterfaceInfo = [self getPrimaryInterfaceInfo];
-    NSLog(@"Primary Interface Info %@",primaryInterfaceInfo);
-    allInterfaces = [self getAllInterfaces];
-    NSLog(@"All Interfaces %@",allInterfaces);
 }
 
 - (NSApplicationTerminateReply)applicationShouldTerminate:(NSApplication *)sender {
@@ -44,14 +41,12 @@
 }
 
 -(void) displayMenu {
+    [self setMenuItemsWithArray:[self getSortedInterfaceByPrimaryService:[[self getPrimaryInterfaceInfo] objectForKey:@"PrimaryService"] forInterface:[self getAllInterfaces]]];
     [statusItem performSelector:@selector(popUpStatusItemMenu:) withObject:aMenu afterDelay:0.1 inModes:[NSArray arrayWithObjects:NSRunLoopCommonModes, NSDefaultRunLoopMode, nil]];
 }
 
--(IBAction)selectEthernet:(id)sender {
-    
-}
-
--(IBAction)selectWireless:(id)sender {
+-(IBAction)clickedItem:(NSMenuItem *)sender {
+    NSLog(@"Sender %@ %ld",sender, sender.tag);
     
 }
 
@@ -99,6 +94,16 @@
         interface.hardwareAddress = (__bridge NSString *)SCNetworkInterfaceGetHardwareAddressString(networkInterface);
         interface.interfaceSystemName = (__bridge NSString *)SCNetworkInterfaceGetBSDName(networkInterface);
         interface.interfaceType = (__bridge NSString *)SCNetworkInterfaceGetInterfaceType(networkInterface);
+        
+        if([interface.interfaceType isEqualToString:(NSString *)kSCNetworkInterfaceTypeEthernet]){
+            interface.interfaceImageName = @"Ethernet.png";
+        } else if([interface.interfaceType isEqualToString:(NSString *)kSCNetworkInterfaceTypeFireWire]){
+            interface.interfaceImageName = @"Firewire.png";
+        }  else if([interface.interfaceType isEqualToString:(NSString *)kSCNetworkInterfaceTypeBluetooth]){
+            interface.interfaceImageName = @"Bluetooth.png";
+        }  else if([interface.interfaceType isEqualToString:(NSString *)kSCNetworkInterfaceTypeIEEE80211]){
+            interface.interfaceImageName = @"Wireless.png";
+        }
         
         [allInts addObject:interface];
         
@@ -160,6 +165,30 @@
 	}
     
 	return address;
+}
+
+-(NSArray *) getSortedInterfaceByPrimaryService:(NSString *)primaryService forInterface:(NSArray *)interfaces {
+    NSMutableArray *sortedInterfaces = [[NSMutableArray alloc] init];
+    for (NetworkInterface *aInterface in interfaces) {
+        if([aInterface.serviceID isEqualToString:primaryService]){
+            [sortedInterfaces insertObject:aInterface atIndex:0];
+        } else {
+            [sortedInterfaces addObject:aInterface];
+        }
+    }
+    
+    return [NSArray arrayWithArray:sortedInterfaces];
+}
+
+-(void) setMenuItemsWithArray:(NSArray *) content {
+    [aMenu removeAllItems];
+    for (NetworkInterface *aInterface in content){
+        NSMenuItem *aMenuItem = [[NSMenuItem alloc] initWithTitle:aInterface.interfaceName action:@selector(clickedItem:) keyEquivalent:@""];
+        [aMenuItem setTag:[content indexOfObject:aInterface]];
+        [aMenuItem setImage:[NSImage imageNamed:aInterface.interfaceImageName]];
+        [aMenu addItem:aMenuItem];
+    }
+    [aMenu addItemWithTitle:@"Quit" action:@selector(quit:) keyEquivalent:@"Q"];
 }
 
 @end

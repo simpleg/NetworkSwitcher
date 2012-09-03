@@ -15,9 +15,10 @@
 @synthesize interfaceType;
 @synthesize hardwareAddress;
 @synthesize interfaceSystemName;
+@synthesize interfaceImageName;
 
 -(NSString *)description {
-    return [NSString stringWithFormat:@"interface name %@ serviceID %@ interfaceType %@ hardware address %@ interface system name %@", interfaceName, serviceID, interfaceType, hardwareAddress, interfaceSystemName];
+    return [NSString stringWithFormat:@"interface name %@ serviceID %@ interfaceType %@ hardware address %@ interface system name %@ interface Image name %@", interfaceName, serviceID, interfaceType, hardwareAddress, interfaceSystemName, interfaceImageName];
 }
 
 @end

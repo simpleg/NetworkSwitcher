@@ -14,6 +14,7 @@
     NSString *interfaceType;
     NSString *hardwareAddress;
     NSString *interfaceSystemName;
+    NSString *interfaceImageName;
 }
 
 @property (nonatomic, strong) NSString *interfaceName;
@@ -21,5 +22,6 @@
 @property (nonatomic, strong) NSString *interfaceType;
 @property (nonatomic, strong) NSString *hardwareAddress;
 @property (nonatomic, strong) NSString *interfaceSystemName;
+@property (nonatomic, strong) NSString *interfaceImageName;
 
 @end

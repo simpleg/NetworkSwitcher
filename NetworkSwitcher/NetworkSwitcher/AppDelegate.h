@@ -13,15 +13,7 @@
     IBOutlet NSMenu *aMenu;
     NSStatusItem *statusItem;
     StatusItemView *statusItemView;
-    
-    NSDictionary *primaryInterfaceInfo;
-    NSArray *allInterfaces;
-    
 }
 @property (nonatomic, strong) IBOutlet NSMenu *aMenu;
-
--(IBAction)selectEthernet:(id)sender;
--(IBAction)selectWireless:(id)sender;
--(IBAction)quit:(id)sender;
 
 @end
