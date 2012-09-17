@@ -9,6 +9,12 @@
 #import "AppDelegate.h"
 #import "NetworkInterface.h"
 #import <SystemConfiguration/SystemConfiguration.h>
+#import "NSAttributedString+Hyperlink.h"
+#import "LaunchAtLoginController.h"
+
+static SCPreferencesRef PREFS;
+static AuthorizationRef AUTH_REF;
+static SCNetworkSetRef  CURRENT_NETWORKSET;
 
 @interface AppDelegate(PrivateMethods)
 -(NSDictionary *) getPrimaryInterfaceInfo;
@@ -21,10 +27,10 @@
 
 @implementation AppDelegate
 @synthesize aMenu;
-
--(void) dealloc {
-    
-}
+@synthesize prefWindow;
+@synthesize launchAtStartupCheckbox;
+@synthesize currentVersionTextField;
+@synthesize sourceLinkTextField;
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:24.0];
@@ -34,6 +40,42 @@
 
     [statusItemView setImage:[NSImage imageNamed:@"Status.png"]];
     [statusItemView setAlternateImage:[NSImage imageNamed:@"StatusHighlighted.png"]];
+    
+
+    currentVersionTextField.stringValue = [NSString stringWithFormat:@"%@ %@ %@ %@",NSLocalizedString(@"Current version :", @"Current Version ":), [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"], NSLocalizedString(@"Build :", @"Build :"),[[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleVersion"]];
+    
+    [self setHyperlinkWithTextField:sourceLinkTextField];
+    
+    
+    LaunchAtLoginController *launchController = [[LaunchAtLoginController alloc] init];
+    BOOL launch = [launchController launchAtLogin];
+    
+    launchAtStartupCheckbox.state = launch;
+    
+    AuthorizationCreate(NULL, kAuthorizationEmptyEnvironment, kAuthorizationFlagDefaults, &AUTH_REF);
+    PREFS = SCPreferencesCreateWithAuthorization(NULL, CFSTR("Network Switcher"), NULL, AUTH_REF);
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(windowResignNotification:) name:NSWindowDidResignKeyNotification object:prefWindow];
+}
+
+-(void)setHyperlinkWithTextField:(NSTextField*)inTextField {
+    // both are needed, otherwise hyperlink won't accept mousedown
+    [inTextField setAllowsEditingTextAttributes: YES];
+    [inTextField setSelectable: YES];
+    
+    NSURL* url = [NSURL URLWithString:@"https://github.com/simpleg/NetworkSwitcher"];
+    
+    NSMutableAttributedString* string = [[NSMutableAttributedString alloc] init];
+    [string appendAttributedString: [NSAttributedString hyperlinkFromString:NSLocalizedString(@"Network switcher source code (external web browser)", @"Network switcher source code") withURL:url]];
+    
+    // set the attributed string to the NSTextField
+    [inTextField setAttributedStringValue: string];
+    [inTextField setFont:[NSFont systemFontOfSize:14]];
+}
+
+
+-(void) windowResignNotification:(id) sender {
+    [prefWindow orderOut:self];
 }
 
 - (NSApplicationTerminateReply)applicationShouldTerminate:(NSApplication *)sender {
@@ -43,16 +85,67 @@
 -(void) displayMenu {
     [self setMenuItemsWithArray:[self getSortedInterfaceByPrimaryService:[[self getPrimaryInterfaceInfo] objectForKey:@"PrimaryService"] forInterface:[self getAllInterfaces]]];
     [statusItem performSelector:@selector(popUpStatusItemMenu:) withObject:aMenu afterDelay:0.1 inModes:[NSArray arrayWithObjects:NSRunLoopCommonModes, NSDefaultRunLoopMode, nil]];
+    CURRENT_NETWORKSET = SCNetworkSetCopyCurrent(PREFS);
 }
 
 -(IBAction)clickedItem:(NSMenuItem *)sender {
     NSLog(@"Sender %@ %ld",sender, sender.tag);
     NetworkInterface *aInterface = [[self getSortedInterfaceByPrimaryService:[[self getPrimaryInterfaceInfo] objectForKey:@"PrimaryService"] forInterface:[self getAllInterfaces]] objectAtIndex:sender.tag];
     NSLog(@"Interface %@",aInterface);
+
+    
+    SCPreferencesLock(PREFS, YES);
+    
+    NSArray *currentOrder = (__bridge NSArray *) SCNetworkSetGetServiceOrder(CURRENT_NETWORKSET);
+    
+    NSLog(@"CurrentOrder %@",currentOrder);
+    
+    NSMutableArray *newOrder = [[NSMutableArray alloc] init];
+    
+    
+    for (NSString *currentOrderServiceId in currentOrder) {
+        if([currentOrderServiceId isEqualToString:aInterface.serviceID]){
+            [newOrder insertObject:aInterface.serviceID atIndex:0];
+        } else {
+            [newOrder addObject:currentOrderServiceId];
+        }
+    }
+
+    NSLog(@"New order %@", newOrder);
+
+    SCNetworkSetSetServiceOrder(CURRENT_NETWORKSET,(__bridge CFArrayRef) newOrder);
+    
+	if(SCPreferencesUnlock(PREFS)){
+		NSLog(@"prefs unlock!");
+	} else {
+		NSLog(@"prefs NOT unlocked!");
+	}
+    
+    if(SCPreferencesCommitChanges(PREFS)) {
+		NSLog(@"Pref changes commited!");
+	} else {
+		NSLog(@"Pref changes NOT commited!");
+	}
+	
+	if(SCPreferencesApplyChanges(PREFS)) {
+		NSLog(@"Pref changes applied!");
+	} else {
+		NSLog(@"Pref changes NOT applied!");
+	}
 }
 
 -(IBAction)quit:(id)sender {
     exit(0);
+}
+
+-(IBAction)displayPrefsWithDelay:(id)sender {
+    [self performSelector:@selector(preferences:) withObject:sender afterDelay:0.1 inModes:[NSArray arrayWithObjects:NSRunLoopCommonModes, NSDefaultRunLoopMode, nil]];
+}
+
+-(IBAction)preferences:(id)sender {
+    [prefWindow setLevel:NSPopUpMenuWindowLevel+1];
+    [prefWindow orderFront:self];
+    [prefWindow makeKeyAndOrderFront:self];
 }
 
 -(NSDictionary *) getPrimaryInterfaceInfo {
@@ -247,7 +340,15 @@
         [aMenu addItem:aMenuItem];
     }
     [aMenu addItem:[NSMenuItem separatorItem]];
+    [aMenu addItemWithTitle:@"Preferences" action:@selector(displayPrefsWithDelay:) keyEquivalent:@""];
     [aMenu addItemWithTitle:@"Quit" action:@selector(quit:) keyEquivalent:@""];
+}
+
+-(IBAction)checkBoxClicked:(id)sender {
+    NSLog(@"Checkbox clicked %ld", ((NSButton *)sender).state);
+    
+    LaunchAtLoginController *launchController = [[LaunchAtLoginController alloc] init];
+    [launchController setLaunchAtLogin:((NSButton *)sender).state];
 }
 
 @end

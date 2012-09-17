@@ -13,7 +13,17 @@
     IBOutlet NSMenu *aMenu;
     NSStatusItem *statusItem;
     StatusItemView *statusItemView;
+    IBOutlet NSWindow *prefWindow;
+    IBOutlet NSButton *launchAtStartupCheckbox;
+    IBOutlet NSTextField *currentVersionTextField;
+    IBOutlet NSTextField *sourceLinkTextField;
 }
 @property (nonatomic, strong) IBOutlet NSMenu *aMenu;
+@property (nonatomic, strong) IBOutlet NSWindow *prefWindow;
+@property (nonatomic, strong) IBOutlet NSButton *launchAtStartupCheckbox;
+@property (nonatomic, strong) IBOutlet NSTextField *currentVersionTextField;
+@property (nonatomic, strong) IBOutlet NSTextField *sourceLinkTextField;
+
+-(IBAction)checkBoxClicked:(id)sender;
 
 @end
