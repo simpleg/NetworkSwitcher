@@ -84,8 +84,8 @@ static SCNetworkSetRef  CURRENT_NETWORKSET;
 
 -(void) displayMenu {
     [self setMenuItemsWithArray:[self getSortedInterfaceByPrimaryService:[[self getPrimaryInterfaceInfo] objectForKey:@"PrimaryService"] forInterface:[self getAllInterfaces]]];
-    [statusItem performSelector:@selector(popUpStatusItemMenu:) withObject:aMenu afterDelay:0.1 inModes:[NSArray arrayWithObjects:NSRunLoopCommonModes, NSDefaultRunLoopMode, nil]];
     CURRENT_NETWORKSET = SCNetworkSetCopyCurrent(PREFS);
+    [statusItem performSelector:@selector(popUpStatusItemMenu:) withObject:aMenu afterDelay:0.1 inModes:[NSArray arrayWithObjects:NSRunLoopCommonModes, NSDefaultRunLoopMode, nil]];
 }
 
 -(IBAction)clickedItem:(NSMenuItem *)sender {

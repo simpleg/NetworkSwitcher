@@ -235,7 +235,7 @@
 		59618D6215909E6200E6F796 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0430;
+				LastUpgradeCheck = 0450;
 				ORGANIZATIONNAME = simplegCorp;
 			};
 			buildConfigurationList = 59618D6515909E6200E6F796 /* Build configuration list for PBXProject "NetworkSwitcher" */;
@@ -366,6 +366,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = YES;
+				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "NetworkSwitcher/NetworkSwitcher-Prefix.pch";
 				INFOPLIST_FILE = "NetworkSwitcher/NetworkSwitcher-Info.plist";
@@ -378,6 +379,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = YES;
+				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "NetworkSwitcher/NetworkSwitcher-Prefix.pch";
 				INFOPLIST_FILE = "NetworkSwitcher/NetworkSwitcher-Info.plist";
