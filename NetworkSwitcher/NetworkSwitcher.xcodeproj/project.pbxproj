@@ -24,6 +24,7 @@
 		59618DAC1590B95000E6F796 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59618DAB1590B95000E6F796 /* SystemConfiguration.framework */; };
 		59618DBF1590DC7D00E6F796 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59618DBE1590DC7C00E6F796 /* Security.framework */; };
 		59618DE8159218A500E6F796 /* NetworkInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = 59618DE7159218A500E6F796 /* NetworkInterface.m */; };
+		5971B572161C7881003B0BB7 /* network.icns in Resources */ = {isa = PBXBuildFile; fileRef = 5971B571161C7881003B0BB7 /* network.icns */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +60,7 @@
 		59618DBE1590DC7C00E6F796 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		59618DE6159218A500E6F796 /* NetworkInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkInterface.h; sourceTree = "<group>"; };
 		59618DE7159218A500E6F796 /* NetworkInterface.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkInterface.m; sourceTree = "<group>"; };
+		5971B571161C7881003B0BB7 /* network.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = network.icns; path = ../../network.icns; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,6 +184,7 @@
 		59618DA01590A8A500E6F796 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				5971B571161C7881003B0BB7 /* network.icns */,
 				594AFF6515EFA69B009EDB49 /* Ethernet.png */,
 				594AFF6615EFA69B009EDB49 /* Ethernet@2x.png */,
 				594AFF6715EFA69B009EDB49 /* Wireless.png */,
@@ -267,6 +270,7 @@
 				594AFF6B15EFA69B009EDB49 /* Wireless.png in Resources */,
 				594AFF6C15EFA69B009EDB49 /* Wireless@2x.png in Resources */,
 				029F294315F5518A0055C990 /* MainMenu.xib in Resources */,
+				5971B572161C7881003B0BB7 /* network.icns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
